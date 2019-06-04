@@ -42,7 +42,7 @@
   :group 'docker
   :type 'boolean)
 
-(defun docker-run (action &rest args)
+(defun docker-run-docker (action &rest args)
   "Execute \"docker ACTION\" using ARGS."
   (let ((default-directory (if (and docker-run-as-root (not (file-remote-p default-directory))) "/sudo::" default-directory)))
     (let ((command (format "%s %s %s %s"
